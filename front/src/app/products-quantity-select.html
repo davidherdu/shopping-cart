@@ -1,0 +1,17 @@
+<div *ngIf="product">
+    <p>{{product.code}}</p>
+	<p>{{product.name}}</p>
+	<p>{{product.price}} €</p>
+	<hr style="width: 100%; color: black; height: 1px; background-color:black;" />
+	<div class="column small-12 large-2">
+		<p>
+		Quantity: 
+		<select [(ngModel)]="selectedQuantity">
+			<option *ngFor="let item of items" [ngValue]="item">
+				{{item}}
+			</option>
+		</select>
+		</p>
+		<p><button type="button" class="btn btn-warning" (click)="addToCart()">Add to cart</button></p>
+	</div>
+</div>

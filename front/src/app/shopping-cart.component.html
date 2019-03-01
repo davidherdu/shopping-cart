@@ -1,0 +1,32 @@
+<div class="row">
+	<div class="col-md-4"><h2 style="display:inline;" class="text-center">Your shopping cart</h2></div>
+	<div class="col-md-4"><button routerLink="/products" class="btn btn-success" >Show products</button></div>
+	<div class="col-md-4"><button [disabled]="disableDelete" routerLink="/products" class="btn btn-danger" (click)="deleteShoppingCart()" >Delete cart</button></div>
+</div>
+<div *ngIf="cart$ | async as cart; else empty">
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Code Product</th>
+				<th>Quantity</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let item of cart.products" >
+				<td>{{item.code}}</td>
+				<td>{{item.quantity}}</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td>Total</td>
+				<td>{{cart.total}} €</td>
+			</tr>
+		</tfoot>
+    </table>
+</div>
+<ng-template #empty>
+<div class="row">
+	<h4 style="white-space:pre;" class="text-center">Your cart is empty</h4>
+</div>
+</ng-template>

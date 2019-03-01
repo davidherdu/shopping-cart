@@ -1,0 +1,27 @@
+<div class="row">
+	<div class="col-md-4"><h2 style="display:inline;" class="text-center">Products</h2></div>
+	<div class="col-md-4"><button [disabled]="disableButton()" routerLink="/shoppingcart" class="btn btn-success" >Check shopping cart</button></div>
+</div>
+<div class="row">
+	<div class="col-md-8">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Code Product</th>
+					<th>Name</th>
+					<th>Price</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let product of products | async" [class.success]="product === selectedProduct" (click)="onSelect(product)">
+					<td>{{product.code}}</td>
+					<td>{{product.name}}</td>
+					<td>{{product.price}} €</td>
+				<tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="col-md-4">
+		<products-quantity-select [product]="selectedProduct"></products-quantity-select>
+	</div>
+</div>
