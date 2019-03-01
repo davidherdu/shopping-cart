@@ -2,15 +2,10 @@ This is an example of a simple shopping cart developed with Angular and Spring w
 
 
 Back:
-
-cd back
-
-mvn spring-boot:run
+1.cd back
+2. mvn spring-boot:run
 
 Front:
-
-cd front
-
-npm install
-
-npm start
+1. cd front
+2. npm install
+3. npm start
