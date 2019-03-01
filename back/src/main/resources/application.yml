@@ -1,0 +1,23 @@
+config:
+  products:
+    - code: VOUCHER
+      name: 'This is a Voucher'
+      price: 5.00
+    - code: TSHIRT
+      name: 'This is a T-Shirt'
+      price: 20.00
+    - code: MUG
+      name: 'This is a Coffee Mug'
+      price: 7.5
+  discounts:
+    - type: BULK_PURCHASE
+      product: TSHIRT
+      amountMin: 3
+      discount: 19.0
+      active: true
+    - type: N_GET_M
+      product: VOUCHER
+      amountMin: 2
+      discount: 5.00
+      active: true
+      
