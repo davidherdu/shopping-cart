@@ -2,7 +2,7 @@ This is an example of a simple shopping cart developed with Angular and Spring w
 
 
 Back:
-1.cd back
+1. cd back
 2. mvn spring-boot:run
 
 Front:
